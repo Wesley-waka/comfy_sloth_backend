@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
 
 app.use('api/furniture');
 
 mongoose
     .connect(
-        'mongodb+srv://wesleywaka2:wesleywaka2@cluster0.bkzujvd.mongodb.net/Places-app?retryWrites=true&w=majority'
+        process.env.MONGO_URI
     )
     .then(() => {
         app.listen(500);

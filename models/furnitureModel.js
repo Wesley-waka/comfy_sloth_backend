@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const FurnitureSchema = new Schema({
     name: {
         type: String,
-        require: true,
+        require: true
     },
     price: {
         type: String,
@@ -32,7 +32,7 @@ const FurnitureSchema = new Schema({
     },
     category: {
         type: String,
-        require: true,
+        require: true
     },
     shipping: {
         type: Boolean,
