@@ -43,8 +43,45 @@ const createFurniture = async (req, res) => {
     res.status(201).json({ createFurniture });
 }
 
+const updateProduct = async (req, res) => {
+    const { price, featured, color, company, shipping } = req.body
+
+    const furnitureId = req.params.fid;
+
+    let furniture;
+
+    try {
+        furniture = await furniture.findOne({ furnitureId });
+    } catch (error) {
+        throw new Error('Furniture does not exist');
+    }
+
+    if (furniture && price) {
+        furniture.price = price;
+    } else if (furniture && featured) {
+        furniture.featured = featured
+    } else if (furniture && color) {
+        furniture.color = color
+    } else if (furniture && company) {
+        furniture.company = company
+    } else if (furniture && shipping) {
+        furniture.shipping = shipping
+    }
+
+    try {
+        await furniture.save()
+    } catch (error) {
+        res.status(422);
+        throw new Error('Furniture Update Failed,');
+    }
+
+    res.status(201).json({ furniture });
+
+}
+
 
 module.exports = {
     getAllFurniture,
-    createFurniture
+    createFurniture,
+    updateProduct
 }
