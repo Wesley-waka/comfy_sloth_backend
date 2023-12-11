@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
+const furnitureRoutes = require('./routes/furnitureRoutes');
 
-app.use('api/furniture');
+app.use('api/furniture', furnitureRoutes);
 
 mongoose
     .connect(

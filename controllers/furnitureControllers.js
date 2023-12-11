@@ -1,16 +1,17 @@
 const Furniture = require("../models/furnitureModel")
 
 const getAllFurniture = async (req, res) => {
-    const furnitures = await Furniture.find();
+    const furniture = await Furniture.find();
+
     res
         .json(200)
-        .status({ furnitures })
-}
+        .status({ furniture })
+};
 
 const createFurniture = async (req, res) => {
     const { title, category, description, price, image, featured, color, company, shipping } = req.body
 
-    if (!title || !category || !description || !price || !image || !featured || !color || !company || !shipping) {
+    if (!title || !category || !description || !price || !image || !featured || !color || !company || !shipping || !stockValue) {
         res.status(400);
         throw new Error('Please fill in all entries')
     }
@@ -24,7 +25,8 @@ const createFurniture = async (req, res) => {
         featured: featured,
         color: color,
         company: company,
-        shipping: shipping
+        shipping: shipping,
+        stockValue: stockValue
     })
 
     try {
@@ -41,10 +43,10 @@ const createFurniture = async (req, res) => {
     }
 
     res.status(201).json({ createFurniture });
-}
+};
 
-const updateProduct = async (req, res) => {
-    const { price, featured, color, company, shipping } = req.body
+const updateFurniture = async (req, res) => {
+    const { price, featured, color, company, shipping, stockValue } = req.body
 
     const furnitureId = req.params.fid;
 
@@ -66,6 +68,8 @@ const updateProduct = async (req, res) => {
         furniture.company = company
     } else if (furniture && shipping) {
         furniture.shipping = shipping
+    } else if (furniture && shipping) {
+        furniture.stockValue = stockValue
     }
 
     try {
@@ -76,12 +80,11 @@ const updateProduct = async (req, res) => {
     }
 
     res.status(201).json({ furniture });
-
-}
+};
 
 
 module.exports = {
     getAllFurniture,
     createFurniture,
-    updateProduct
+    updateFurniture
 }
