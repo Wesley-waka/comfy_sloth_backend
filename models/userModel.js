@@ -17,6 +17,7 @@ const userSchema = new schema({
     admin: {
         type: String,
         required: true,
+        default: false
     }
 });
 
