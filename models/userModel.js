@@ -10,6 +10,10 @@ const userSchema = new schema({
         type: String,
         required: true,
     },
+    password: {
+        type: String,
+        required: true,
+    },
     admin: {
         type: String,
         required: true,
