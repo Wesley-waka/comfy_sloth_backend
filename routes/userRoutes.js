@@ -3,8 +3,8 @@ const { registerUser, loginUser, logoutUser } = require('../controllers/userCont
 const router = express.Router();
 
 
-router.post('/', registerUser);
-router.post('/', loginUser);
+router.post('/signup', registerUser);
+router.post('/login', loginUser);
 router.delete('/', logoutUser);
 
 
