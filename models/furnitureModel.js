@@ -11,16 +11,18 @@ const FurnitureSchema = new Schema({
         require: true
     },
     image: {
-        type: String,
-        require: true
+        type: Object,
+        require: true,
+        default: {}
     },
     featured: {
         type: Boolean,
         require: true
     },
-    color: {
-        type: Enumerator,
-        require: true
+    colors: {
+        type: Array,
+        require: true,
+        default: []
     },
     company: {
         type: String,
@@ -37,6 +39,10 @@ const FurnitureSchema = new Schema({
     shipping: {
         type: Boolean,
         require: true
+    },
+    extra_images: {
+        type: Array,
+        default: []
     }
 })
 

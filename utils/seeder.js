@@ -2,12 +2,10 @@ const mongoose = require('mongoose');
 const User = require('../models/userModel');
 const Furniture = require('../models/furnitureModel');
 
-
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect('mongodb+srv://wesleywaka2:wesleywaka2@cluster0.bkzujvd.mongodb.net/Places-app?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
-
 
 const adminData = [
     {
@@ -16,7 +14,7 @@ const adminData = [
         password: 'Wesleywaka2003.',
         admin: true
     }
-]
+];
 
 const furnitureData = [
     {
@@ -60,7 +58,7 @@ const furnitureData = [
         shipping: true,
         stockValue: 10
     }
-]
+];
 
 async function seedDatabase() {
     try {
@@ -70,10 +68,10 @@ async function seedDatabase() {
         const seededFurniture = await Furniture.insertMany(furnitureData);
         console.log('Database seeded successfully:', seededFurniture);
         console.log('Database seeded successfully:', seededData);
+        mongoose.disconnect(); // Move disconnect here in the success case
     } catch (error) {
-        console.error('Error seeding DB:', err);
-    } finally {
-        mongoose.disconnect();
+        console.error('Error seeding DB:', error);
+        mongoose.disconnect(); // Move disconnect here in the error case
     }
 }
 
