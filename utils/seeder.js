@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const User = require('../models/userModel');
 const Furniture = require('../models/furnitureModel');
+const dotenv = require('dotenv').config();
 
-mongoose.connect('mongodb+srv://wesleywaka2:wesleywaka2@cluster0.bkzujvd.mongodb.net/Places-app?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
