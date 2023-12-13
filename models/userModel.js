@@ -16,10 +16,17 @@ const userSchema = new schema({
     },
     admin: {
         type: String,
-        required: true,
+        required: false,
         default: false
+    },
+    image: {
+        type: Object,
+        default: {},
     }
-});
+},
+    {
+        timestamps: true
+    });
 
 
 module.exports = mongoose.model("User", userSchema)

@@ -1,4 +1,5 @@
-const Furniture = require("../models/furnitureModel")
+const Furniture = require("../models/furnitureModel");
+const { fileSizeFormatter } = require("../utils/fileUpload");
 
 const getAllFurniture = async (req, res) => {
     const furniture = await Furniture.find();
@@ -16,12 +17,34 @@ const createFurniture = async (req, res) => {
         throw new Error('Please fill in all entries')
     }
 
+    let fileData = {};
+
+    if (req.file) {
+        let uploadedFile;
+        try {
+            uploadedFile = await cloudinary.uploader.upload(req.file.path, {
+                folder: "Comfy Sloth Store",
+                resource_type: "image"
+            });
+        } catch (error) {
+            res.status(500);
+            throw new Error("Image could not be found")
+        }
+
+        fileData = {
+            fileName: req.file.originalName,
+            filePath: uploadedFile.secure_url,
+            file_type: req.file.mimetype,
+            file_size: fileSizeFormatter(req.file.size, 2),
+        }
+    }
+
     const createFurniture = new Furniture({
         title: title,
         category: category,
         description: description,
         price: price,
-        image: image,
+        image: fileData,
         featured: featured,
         color: color,
         company: company,
@@ -38,6 +61,7 @@ const createFurniture = async (req, res) => {
 
     // Check if Furniture exists 
     const findFurniture = await Furniture.findOne({ title });
+    
     if (findFurniture) {
         throw new Error('Furniture already exists');
     }
