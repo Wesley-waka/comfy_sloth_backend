@@ -5,8 +5,8 @@ const getAllFurniture = async (req, res) => {
     const furniture = await Furniture.find();
 
     res
-        .json(200)
-        .status({ furniture })
+        .status(200)
+        .json({ furniture })
 };
 
 const createFurniture = async (req, res) => {
@@ -61,7 +61,7 @@ const createFurniture = async (req, res) => {
 
     // Check if Furniture exists 
     const findFurniture = await Furniture.findOne({ title });
-    
+
     if (findFurniture) {
         throw new Error('Furniture already exists');
     }
@@ -77,7 +77,7 @@ const updateFurniture = async (req, res) => {
     let furniture;
 
     try {
-        furniture = await furniture.findOne({ furnitureId });
+        furniture = await Furniture.findOne({ furnitureId });
     } catch (error) {
         throw new Error('Furniture does not exist');
     }
@@ -106,9 +106,25 @@ const updateFurniture = async (req, res) => {
     res.status(201).json({ furniture });
 };
 
+const findFurniture = async (req, res) => {
+    const furnitureId = req.params.fid
+
+    let furniture;
+
+    try {
+        furniture = await Furniture.findById(furnitureId);
+    } catch (error) {
+        res.status(404)
+        // throw new Error('Furniture does not exist')
+    }
+
+    res.status(200).json(furniture);
+}
+
 
 module.exports = {
     getAllFurniture,
     createFurniture,
+    findFurniture,
     updateFurniture
 }
