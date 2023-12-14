@@ -1,12 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const { v4: uuidv4 } = require('uuid');
+const payment = require("../controllers/stripeControllers");
 
-router.get('/', (req, res, next) => {
-    console.log("GET Response from Researcher");
-    res.json({
-        message: 'It works'
-    });
-});
+router.get('/', payment);
 
 
 module.exports = router;

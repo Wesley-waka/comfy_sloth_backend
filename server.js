@@ -27,6 +27,7 @@ app.use('/api/furniture', furnitureRoutes);
 app.use('/api/users', userRoutes)
 app.use('/api/pay', stripeRoutes)
 app.get('/', () => console.log('Hello from Node'))
+
 // DB connection
 mongoose
     .connect(
