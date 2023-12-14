@@ -13,7 +13,14 @@ const payment = (req, res, next) => {
             amount: amount * 100,
             currency: 'usd',
             customer: customer.id,
-            receipt_email: token.email
+            receipt_email: token.email,
+            description: "Comfy Sloth Store",
+            shipping: {
+                name: token.card.name,
+                address: {
+                    country: token.card.address_country
+                }
+            }
         }, { idempotencytoken })
     }).then(result => {
         res.status(200).json(result)
