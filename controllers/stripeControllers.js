@@ -1,34 +1,31 @@
 const { v4: uuidv4 } = require('uuid');
 
 
-const payment = (req, res, next) => {
-    console.log(req.body.token);
-    const { token, amount } = req.body;
-    const idempotencytoken = uuidv4();
-
-    return Stripe.customers.create({
-        email: token.email,
-        source: token
-    }).then(customer => {
-        stripe.charges.create({
-            amount: amount * 100,
-            currency: 'usd',
-            customer: customer.id,
-            receipt_email: token.email,
-            description: "Comfy Sloth Store",
-            shipping: {
-                name: token.card.name,
-                address: {
-                    country: token.card.address_country
-                }
-            }
-        }, { idempotencytoken })
-    }).then(result => {
-        res.status(200).json(result)
-    }).catch(err => {
-        res.status(400)
-        console.log(err);
-    })
+const payment = async (req, res, next) => {
+    try {
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ["card"],
+          mode: "payment",
+          line_items: req.body.items.map(item => {
+            const storeItem = storeItems.get(item.id);
+            return {
+              price_data: {
+                currency: "usd",
+                product_data: {
+                  name: storeItem.name,
+                },
+                unit_amount: storeItem.priceInCents,
+              },
+              quantity: item.quantity,
+            };
+          }),
+          success_url: `http://127.0.0.1:5500/client/success.html`,
+          cancel_url: `http://127.0.0.1:5500/client/cancel.html`,  // Removed extra $ character
+        });
+        res.json({ url: session.url });
+      } catch (e) {
+        res.status(500).json({ error: e.message });
+      }
 }
 
 module.exports = payment
