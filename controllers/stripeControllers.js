@@ -1,31 +1,21 @@
 const { v4: uuidv4 } = require('uuid');
 
+// STRIPE CONNECTION
 
-const payment = async (req, res, next) => {
-    try {
-        const session = await stripe.checkout.sessions.create({
-          payment_method_types: ["card"],
-          mode: "payment",
-          line_items: req.body.items.map(item => {
-            const storeItem = storeItems.get(item.id);
-            return {
-              price_data: {
-                currency: "usd",
-                product_data: {
-                  name: storeItem.name,
-                },
-                unit_amount: storeItem.priceInCents,
-              },
-              quantity: item.quantity,
-            };
-          }),
-          success_url: `http://127.0.0.1:5500/client/success.html`,
-          cancel_url: `http://127.0.0.1:5500/client/cancel.html`,  // Removed extra $ character
-        });
-        res.json({ url: session.url });
-      } catch (e) {
-        res.status(500).json({ error: e.message });
-      }
+const payment = async (req, res) => {
+    const { price } = req.body;
+
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: Number(price),
+        currency: "usd",
+        automatic_payment_methods: {
+            enabled: true,
+        },
+    });
+
+    res.status(200).send({
+        clientSecret: paymentIntent.client_secret,
+    });
 }
 
 module.exports = payment

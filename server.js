@@ -25,7 +25,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 // Routes MiddleWare
 app.use('/api/furniture', furnitureRoutes);
 app.use('/api/users', userRoutes)
-app.use('/api/pay', stripeRoutes)
+app.use('/api/payment', stripeRoutes)
 app.get('/', () => console.log('Hello from Node'))
 
 // DB connection
