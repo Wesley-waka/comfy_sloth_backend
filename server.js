@@ -6,7 +6,9 @@ const furnitureRoutes = require('./routes/furnitureRoutes');
 const userRoutes = require('./routes/userRoutes')
 const stripeRoutes = require('./routes/stripeRoutes');
 const cookieParser = require('cookie-parser');
-const stripe = require('stripe')(process.env.STRIPE_KEY)
+const bodyParser = require('body-parser')
+const cors = require('cors');
+const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
 // Middlewares
