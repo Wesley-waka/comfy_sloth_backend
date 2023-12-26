@@ -10,6 +10,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
+const errorHandler = require("./middlewares/errorMiddleware");
 
 // Middlewares
 app.use(express.json());
@@ -29,6 +30,10 @@ app.use('/api/furniture', furnitureRoutes);
 app.use('/api/users', userRoutes)
 app.use('/api/payment', stripeRoutes)
 app.get('/', () => console.log('Hello from Node'))
+
+
+// Error Middleware
+app.use(errorHandler);
 
 // DB connection
 mongoose
