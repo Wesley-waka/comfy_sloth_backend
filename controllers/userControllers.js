@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 const Token = require('../models/tokenModel');
+const asyncHandler = require("express-async-handler");
 
 const generateToken = (id) => {
     jwt.sign({ id }, process.env.JWT, { expiresIn: '1d' });
