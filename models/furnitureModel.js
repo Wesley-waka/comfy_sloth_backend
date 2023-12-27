@@ -43,6 +43,18 @@ const FurnitureSchema = new Schema({
     extra_images: {
         type: Array,
         default: []
+    },
+    stock:{
+        type: Number,
+        require: true
+    },
+    reviews:{
+        type: Number,
+        require: true
+    },
+    stars:{
+        type: Number,
+        require: true
     }
 })
 

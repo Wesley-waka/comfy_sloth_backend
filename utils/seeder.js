@@ -19,7 +19,7 @@ const adminData = [
 
 const furnitureData = [
     {
-        title: 'Accent Chair',
+        name: 'Accent Chair',
         price: 25999,
         image: {
             fileName: "product1",
@@ -57,10 +57,12 @@ const furnitureData = [
         company: 'marcos',
         description: "Introducing our exquisite Accent Chair collection, where comfort meets style in a perfect fusion. Elevate the charm of your living space with these statement pieces designed to capture attention and provide a luxurious retreat within your home.Crafted with meticulous attention to detail, our Accent Chairs boast a harmonious blend of form and function. The ergonomic design ensures not only a comfortable seating experience but also adds a touch of sophistication to any room. Choose from a variety of styles, each uniquely tailored to complement diverse aesthetics, from contemporary chic to timeless elegance.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        stars: 4.9,
+        reviews: 25,
     },
     {
-        title: 'Albany Sectional',
+        name: 'Albany Sectional',
         price: 109999,
         image: {
             fileName: "product1",
@@ -89,19 +91,20 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'living room',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#000",
+            "#ffb900"
         ],
         company: 'liddy',
         description: "Introducing the Albany Sectional — where contemporary design meets unparalleled comfort for the ultimate lounging experience. Our Albany Sectional Collection is a testament to modern living, offering a harmonious blend of style, functionality, and quality craftsmanship.Crafted with precision and attention to detail, each Albany Sectional is designed to be a centerpiece in your living space. The clean lines and sleek profile seamlessly integrate into various decor styles, from urban chic to minimalist sophistication. Its modular design allows for versatile arrangement, ensuring a perfect fit for your unique space and lifestyle.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Albany Table',
+        name: 'Albany Table',
         price: 57899,
         image: {
             fileName: "product1",
@@ -130,19 +133,20 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'kitchen',
         colors: [
-            "#ff0000",
-            "#00ff00",
+            "#ffb900",
             "#0000ff"
         ],
         company: 'ikea',
         description: "The Albany Table marries modern design with functionality. Its clean lines and sturdy construction make it a versatile addition to any dining or workspace, providing a contemporary touch to your everyday gatherings.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Armchair',
+        name: 'Armchair',
         price: 74999,
         image: {
             fileName: "product1",
@@ -171,19 +175,21 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'bedroom',
         colors: [
-            "#ff0000",
+            "#000",
             "#00ff00",
             "#0000ff"
         ],
-        company: 'caressa',
+        company: 'ikea',
         description: "Immerse yourself in comfort and style with our Armchair collection. Each piece is carefully designed to offer a perfect balance of support and relaxation, creating a cozy nook for you to unwind and enjoy moments of tranquility.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Dining Table',
+        name: 'Dining Table',
         price: 107499,
         image: {
             fileName: "product1",
@@ -212,19 +218,21 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'dining',
         colors: [
-            "#ff0000",
             "#00ff00",
-            "#0000ff"
+            "#0000ff",
+            "#ff0000"
         ],
         company: 'marcos',
         description: "Elevate your dining experience with our exquisite Dining Table. Crafted with precision and attention to detail, this table is more than a piece of furniture; it's a statement of refined taste, fostering a sense of togetherness and sophistication in your dining area.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Emperor Bed',
+        name: 'Emperor Bed',
         price: 277399,
         image: {
             fileName: "product1",
@@ -253,19 +261,20 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'bedroom',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#0000ff",
+            "#000"
         ],
         company: 'liddy',
         description: "Introducing the Emperor Bed, where luxury and comfort reign supreme. This bed is not just a place to sleep but a sanctuary for relaxation. With its regal design and sumptuous upholstery, the Emperor Bed transforms your bedroom into a haven of opulence.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Entertainment Center',
+        name: 'Entertainment Center',
         price: 216399,
         image: {
             fileName: "product1",
@@ -294,19 +303,20 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'living room',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#000",
+            "#ff0000"
         ],
         company: 'ikea',
         description: "Transform your living space into an entertainment hub with our sleek Entertainment Center. This functional and stylish piece is designed to house your media essentials while adding a touch of modern elegance to your home.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'High-Back Bench',
+        name: 'High-Back Bench',
         price: 9399,
         image: {
             fileName: "product1",
@@ -337,17 +347,18 @@ const furnitureData = [
         featured: true,
         category: 'office',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#000",
+            "#00ff00"
         ],
         company: 'caressa',
         description: "Make a statement with our High-Back Bench, where contemporary design meets ergonomic comfort. This versatile piece is perfect for adding seating to your entryway or creating a stylish focal point in any room.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Leather Chair',
+        name: 'Leather Chair',
         price: 8399,
         image: {
             fileName: "product1",
@@ -376,19 +387,21 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'bedroom',
         colors: [
             "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#ffb900",
+            "#00ff00"
         ],
         company: 'marcos',
         description: "Indulge in the luxurious comfort of our Leather Chair collection. Crafted with precision and upholstered in high-quality leather, these chairs offer a sophisticated and timeless addition to your living space.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Leather Sofa',
+        name: 'Leather Sofa',
         price: 10899,
         image: {
             fileName: "product1",
@@ -419,17 +432,18 @@ const furnitureData = [
         featured: true,
         category: 'office',
         colors: [
-            "#ff0000",
             "#00ff00",
             "#0000ff"
         ],
         company: 'liddy',
         description: "Experience the epitome of luxury with our Leather Sofa collection. Each sofa is a masterpiece of craftsmanship and design, providing not only a comfortable seating option but also a statement piece that exudes elegance.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Modern Bookshelf',
+        name: 'Modern Bookshelf',
         price: 14599,
         image: {
             fileName: "product1",
@@ -458,19 +472,21 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'kids',
         colors: [
+            "#ffb900",
             "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#00ff00"
         ],
         company: 'ikea',
         description: "Organize your literary treasures with our Modern Bookshelf. Its sleek design and adjustable shelving make it a functional and aesthetic addition to your home office or living room.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Modern Poster Shelf',
+        name: 'Modern Poster Shelf',
         price: 118799,
         image: {
             fileName: "product1",
@@ -499,19 +515,19 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'living room',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#000"
         ],
         company: 'caressa',
         description: "Showcase your favorite art and memories with our Modern Poster Shelf. Its minimalist design allows you to display posters and artworks in a contemporary and personalized way, adding character to your walls.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Shelf',
+        name: 'Shelf',
         price: 115099,
         image: {
             fileName: "product1",
@@ -540,19 +556,19 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'living room',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#00ff00"
         ],
         company: 'marcos',
         description: "Our versatile Shelf collection offers the perfect solution for organizing and displaying your belongings. With various sizes and finishes available, these shelves seamlessly integrate into any room, providing both style and practicality.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Simple Chair',
+        name: 'Simple Chair',
         price: 15099,
         image: {
             fileName: "product1",
@@ -583,17 +599,17 @@ const furnitureData = [
         featured: true,
         category: 'office',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#00ff00"
         ],
-        company: 'liddy',
+        company: 'living room',
         description: "Embrace simplicity with our Simple Chair collection. These chairs are a testament to minimalist design, offering a functional and elegant seating option that effortlessly complements any space.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Sofa Set',
+        name: 'Sofa Set',
         price: 217099,
         image: {
             fileName: "product1",
@@ -622,19 +638,20 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'living room',
         colors: [
-            "#ff0000",
             "#00ff00",
-            "#0000ff"
+            "#ffb900"
         ],
         company: 'ikea',
         description: "Upgrade your living room with our curated Sofa Set collection. Designed for both style and comfort, these sets provide a cohesive and sophisticated look for your entertainment and relaxation needs.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Suede Armchair',
+        name: 'Suede Armchair',
         price: 15299,
         image: {
             fileName: "product1",
@@ -665,17 +682,17 @@ const furnitureData = [
         featured: true,
         category: 'office',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#ffb900"
         ],
         company: 'caressa',
         description: "Immerse yourself in the tactile luxury of our Suede Armchair collection. These chairs offer not only a soft and inviting seating option but also a touch of opulence to enhance your living space.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Utopia Sofa',
+        name: 'Utopia Sofa',
         price: 279299,
         image: {
             fileName: "product1",
@@ -704,19 +721,20 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'living room',
         colors: [
             "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#00ff00"
         ],
         company: 'marcos',
         description: "Immerse yourself in the perfect blend of comfort and contemporary design with our Utopia Sofa. This piece redefines lounging with its plush cushions, clean lines, and modern aesthetic. Elevate your living space with the ultimate seating experience that seamlessly combines style and relaxation.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Vase Table',
+        name: 'Vase Table',
         price: 96299,
         image: {
             fileName: "product1",
@@ -745,19 +763,19 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'bedroom',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#ff0000"
         ],
         company: 'liddy',
         description: "Introducing the Vase Table, where functionality meets artistic expression. This uniquely designed table adds a touch of sophistication to your space with its vase-inspired base. Crafted to be both a practical surface and a work of art, this table effortlessly merges form and function.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        stars: 4.9,
+        reviews: 25,
     },
     {
-        title: 'Wooden Bed',
+        name: 'Wooden Bed',
         price: 196299,
         image: {
             fileName: "product1",
@@ -788,17 +806,18 @@ const furnitureData = [
         featured: true,
         category: 'office',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#000",
+            "#ffb900"
         ],
         company: 'ikea',
         description: "Experience the warmth and timeless appeal of our Wooden Bed. Crafted from high-quality wood, this bed is a statement of natural beauty and durability. Create a cozy retreat in your bedroom with the Wooden Bed, where classic design meets restful serenity.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Wooden Desk',
+        name: 'Wooden Desk',
         price: 156299,
         image: {
             fileName: "product1",
@@ -829,17 +848,17 @@ const furnitureData = [
         featured: true,
         category: 'office',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#000"
         ],
         company: 'caressa',
         description: "Elevate your workspace with the natural charm of our Wooden Desk. Designed for both style and functionality, this desk provides a sturdy and inviting surface for your work or creative endeavors. Immerse yourself in a productive and aesthetically pleasing environment with the Wooden Desk.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
     {
-        title: 'Wooden Table',
+        name: 'Wooden Table',
         price: 246299,
         image: {
             fileName: "product1",
@@ -868,16 +887,17 @@ const furnitureData = [
             }
         ],
         featured: true,
-        category: 'office',
+        category: 'kitchen',
         colors: [
-            "#ff0000",
-            "#00ff00",
-            "#0000ff"
+            "#ffb900",
+            "#ff0000"
         ],
         company: 'marcos',
         description: "Discover the rustic elegance of our Wooden Table collection. Whether used as a dining table or a versatile surface for various activities, each table is a celebration of wood's natural beauty. Embrace the simplicity and warmth that our Wooden Tables bring to your home, creating a welcoming space for gatherings and daily activities.",
         shipping: true,
-        stockValue: 10
+        stock: 10,
+        reviews: 25,
+        stars: 4.9,
     },
 ];
 
