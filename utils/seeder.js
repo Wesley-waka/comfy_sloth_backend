@@ -90,7 +90,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'living room',
         colors: [
             "#000",
@@ -132,7 +131,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'kitchen',
         colors: [
             "#ffb900",
@@ -174,7 +172,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'bedroom',
         colors: [
             "#000",
@@ -217,7 +214,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'dining',
         colors: [
             "#00ff00",
@@ -260,7 +256,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'bedroom',
         colors: [
             "#0000ff",
@@ -302,7 +297,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'living room',
         colors: [
             "#000",
@@ -344,7 +338,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'office',
         colors: [
             "#000",
@@ -386,7 +379,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'bedroom',
         colors: [
             "#ff0000",
@@ -429,13 +421,13 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'office',
         colors: [
             "#00ff00",
             "#0000ff"
         ],
         company: 'liddy',
+        featured: true,
         description: "Experience the epitome of luxury with our Leather Sofa collection. Each sofa is a masterpiece of craftsmanship and design, providing not only a comfortable seating option but also a statement piece that exudes elegance.",
         shipping: true,
         stock: 10,
@@ -471,7 +463,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'kids',
         colors: [
             "#ffb900",
@@ -514,7 +505,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'living room',
         colors: [
             "#000"
@@ -555,7 +545,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'living room',
         colors: [
             "#00ff00"
@@ -596,7 +585,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'office',
         colors: [
             "#00ff00"
@@ -637,13 +625,13 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'living room',
         colors: [
             "#00ff00",
             "#ffb900"
         ],
         company: 'ikea',
+        featured: true,
         description: "Upgrade your living room with our curated Sofa Set collection. Designed for both style and comfort, these sets provide a cohesive and sophisticated look for your entertainment and relaxation needs.",
         shipping: true,
         stock: 10,
@@ -679,7 +667,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'office',
         colors: [
             "#ffb900"
@@ -720,7 +707,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'living room',
         colors: [
             "#ff0000",
@@ -762,7 +748,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'bedroom',
         colors: [
             "#ff0000"
@@ -803,7 +788,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'office',
         colors: [
             "#000",
@@ -845,7 +829,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'office',
         colors: [
             "#000"
@@ -886,7 +869,6 @@ const furnitureData = [
                 fileSize: "80.68kb",
             }
         ],
-        featured: true,
         category: 'kitchen',
         colors: [
             "#ffb900",

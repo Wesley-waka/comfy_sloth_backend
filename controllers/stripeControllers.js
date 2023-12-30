@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 // STRIPE CONNECTION
-const payment = async (req, res) => {
+const payment = async (req, res,next) => {
     const { price } = req.body;
 
     const paymentIntent = await stripe.paymentIntents.create({

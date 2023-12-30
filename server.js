@@ -11,6 +11,7 @@ const cors = require('cors');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const errorHandler = require("./middlewares/errorMiddleware");
+const HttpError = require('./models/http-error');
 
 // Middlewares
 app.use(express.json());
@@ -25,6 +26,10 @@ app.use(
 );
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
+// app.use((req, res, next) => {
+//     const error = new HttpError('Could not find this route.', 404);
+//     throw error;
+//   });
 // Routes MiddleWare
 app.use('/api/furniture', furnitureRoutes);
 app.use('/api/users', userRoutes)
