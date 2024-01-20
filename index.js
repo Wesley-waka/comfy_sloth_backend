@@ -43,7 +43,7 @@ app.use(errorHandler);
 // DB connection
 mongoose
     .connect(
-        'mongodb+srv://wesleywaka2:wesleywaka2@cluster0.bkzujvd.mongodb.net/Places-app?retryWrites=true&w=majority'
+        'mongodb+srv://wesleywaka2:wesleywaka2@clusterztm.kle9fqo.mongodb.net/comfy-slothStore?retryWrites=true&w=majority'
     )
     .then(() => {
         app.listen(3000);
