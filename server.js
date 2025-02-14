@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(
     cors({
-        origin: ["http://localhost:3000", "https://pinvent-app.vercel.app"],
+        origin: '*',
         credentials: true,
     })
 );
@@ -34,7 +34,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 app.use('/api/furniture', furnitureRoutes);
 app.use('/api/users', userRoutes)
 app.use('/api/payment', stripeRoutes)
-app.get('/', () => console.log('Hello from Node'))
+app.get('/', (req, res) => res.send('Hello from Node'))
 
 
 // Error Middleware
